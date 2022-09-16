@@ -1,4 +1,5 @@
-
+let countPlayer = 0
+let countMachine = 0
 let getComputerChoice = () => {
 
     // Get a random number 1 2 or 3
@@ -44,11 +45,37 @@ let singleRound = (playerSelect, machineSelect) => {
     //Check if the player won
     if(playerSelect.toLowerCase() === 'rock' && machineSelect.toLowerCase() === 'scissors' || playerSelect.toLowerCase() === 'paper' && machineSelect.toLowerCase() === 'rock' ||
     playerSelect.toLowerCase() === 'scissors' && machineSelect.toLowerCase() === 'paper'){
-        return alert(`You Won! ${playerSelect} beats ${machineSelect}`)
+        countPlayer++
+        return alert(`You Won! ${playerSelect} beats ${machineSelect} ${countPlayer}x${countMachine}`) 
     }
     else{
-        return alert(`You loose, ${machineSelect} beats ${playerSelect}`)
+        countMachine++
+        return alert(`You loose, ${machineSelect}beats ${playerSelect} ${countPlayer}x${countMachine}`)
+
     }
 
 }
 
+
+
+
+let game = () =>{
+    //Play the a round
+    singleRound(getPlayerSelection(),getComputerChoice())
+
+    //Check if there is a winner
+    if(countPlayer > 2){
+        return alert(`You win, you beat the machine ${countPlayer}x${countMachine}`)
+    }
+    else if(countMachine > 2){
+        return alert(`You loose, The machine won ${countPlayer}x${countMachine}`)
+    }
+    else{ //repeat the process
+        game()
+
+    }
+    
+
+
+
+}
