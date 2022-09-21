@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>ROCK • PAPER • SCISSORS</h1>
+        <p class="msg">Start the game in the button below</p>
+        <div class="imgcontainer">
+            <div class="leftside">
+                <img id='playerside' src="images/paper.png" alt="" width="150px">
+
+            </div>
+            <div class="rightside">
+                <img id='machineside' src="images/rock.png" alt="" width="150px">
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn Rock">Rock</button>
+            <button class="btn Paper">Paper</button>
+            <button class="btn Scissors">Scissors</button>
+            <button class="reset">Reset</button>
+        </div>
+    </div>
 </body>
 </html>
